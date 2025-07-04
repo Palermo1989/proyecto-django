@@ -1,10 +1,11 @@
 from django.db import models
 
+
 # Create your models here.
 
 
 class paciente(models.Model):
-    nombre = models.CharField()
+    nombre_paciente = models.CharField()
     apellido = models.CharField()
     fecha_nacimiento = models.DateField()
     edad = models.IntegerField()
@@ -12,7 +13,7 @@ class paciente(models.Model):
     obra_social = models.CharField()
 
     def __str__(self):
-        return f"{self.nombre} {self.apellido}"
+        return f"{self.nombre_paciente} {self.apellido}"
 
 class estudio(models.Model):
     paciente = models.ForeignKey(paciente, on_delete=models.CASCADE)
@@ -21,13 +22,14 @@ class estudio(models.Model):
     resultado = models.TextField()
 
     def __str__(self):
-        return f"Estudio de {self.paciente.nombre} - {self.tipo_estudio}"
+        return f"Estudio de {self.paciente.nombre_paciente} - {self.tipo_estudio}"
     
+
 class doctor(models.Model):
-        nombre = models.CharField()
+        nombre_doctor = models.CharField()
         apellido = models.CharField()
         especialidad = models.CharField()
         email = models.EmailField()
 
         def __str__(self):
-            return f"Dr. {self.nombre} {self.apellido} - {self.especialidad}"
+            return f"Dr. {self.nombre_doctor} {self.apellido} - {self.especialidad}"

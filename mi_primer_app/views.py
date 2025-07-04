@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
-from models import paciente
-from models import estudio
-from models import doctor 
+from .models import paciente
+from .models import estudio
+from .models import doctor 
 
 from django.http import HttpResponse
 
@@ -13,17 +13,19 @@ def saludo(request):
 def saludo_con_template(request):
     return render(request, 'mi_primer_app/saludo.html')
 
-def nuevo_paciente(request,nombre):
+def crear_paciente(request,nombre):
     if nombre is not None:
-        nuevo_paciente = paciente(
+       nuevo_paciente = paciente(
             nombre=nombre,
             apellido="Apellido",
             fecha_nacimiento="2000-01-01",
             edad=23,
             email="apellido@gmail.com",
             obra_social="Obra Social Ejemplo"
-        )
-        nuevo_paciente.save()
+    )
+    
+    nuevo_paciente.save()
+    return render(request, 'mi_primer_app/crear_paciente.html', {'paciente': nuevo_paciente})   
 
 def nuevo_estudio(request, nombre):
     if nombre is not None:
@@ -34,6 +36,7 @@ def nuevo_estudio(request, nombre):
             resultado="Resultado del estudio"
         )
         nuevo_estuidio.save()
+        return render(request, 'mi_primer_app/nuevo_estudio.html', {'estudio': nuevo_estuidio})
 
 def nuevo_doctor(request,nombre):
     if nombre is not None:
@@ -44,3 +47,4 @@ def nuevo_doctor(request,nombre):
             email=""
         )
         nuevo_doctor.save()
+        return render(request, 'mi_primer_app/nuevo_doctor.html', {'doctor': nuevo_doctor})
