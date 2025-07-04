@@ -13,7 +13,7 @@ def saludo(request):
 def saludo_con_template(request):
     return render(request, 'mi_primer_app/saludo.html')
 
-def crear_paciente(request,nombre):
+def nuevo_paciente(request,nombre):
     if nombre is not None:
        nuevo_paciente = paciente(
             nombre=nombre,
@@ -25,7 +25,7 @@ def crear_paciente(request,nombre):
     )
     
     nuevo_paciente.save()
-    return render(request, 'mi_primer_app/crear_paciente.html', {'paciente': nuevo_paciente})   
+    return render(request, 'mi_primer_app/nuevopaciente.html', {'paciente': nuevo_paciente})   
 
 def nuevo_estudio(request, nombre):
     if nombre is not None:

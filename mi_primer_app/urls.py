@@ -1,12 +1,12 @@
 from django.urls import path
-from .views import saludo, saludo_con_template ,crear_paciente, nuevo_estudio, nuevo_doctor
+from .views import saludo, saludo_con_template ,nuevo_paciente , nuevo_estudio, nuevo_doctor
 
 urlpatterns = [
     path('hola mundo/', saludo),  
     path('hola-template/', saludo_con_template),
-    path('crear-paciente/<str:nombre>/', crear_paciente),
-    path('nuevo-estudio/<str:nombre>/', nuevo_estudio),
-    path('nuevo-doctor/<str:nombre>/', nuevo_doctor),
+    path('nuevo_paciente/<str:nombre>/', nuevo_paciente),
+    path('nuevo_estudio/<str:nombre>/', nuevo_estudio),
+    path('nuevo_doctor/<str:nombre>/', nuevo_doctor),
     
    
 ]
