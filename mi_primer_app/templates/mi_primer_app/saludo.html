@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Doctor y Pacientes</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f8fa;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #0077b6;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .paciente {
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+    }
+    .paciente:last-child {
+      border-bottom: none;
+    }
+    h2 {
+      color: #023e8a;
+    }
+    ul.estudios {
+      list-style-type: none;
+      padding-left: 20px;
+    }
+    ul.estudios li::before {
+      content: "🩺";
+      margin-right: 8px;
+    }
+    .nombre-paciente {
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Clinica Merlina</h1>
+  <p>Con los mejores especialistas para tu salud</p>
+</header>
+
+<div class="container">
+  <h2>Seleccione sobre lo que desea conultar</h2>
+
+  <div class="paciente">
+    <div class="nombre-paciente">Pacientes</div>
+    <ul class="estudios">
+      <li>Ecografía abdominal</li>
+      <li>Hemograma completo</li>
+      <li>Electrocardiograma</li>
+    </ul>
+  </div>
+
+  <div class="paciente">
+    <div class="nombre-paciente">Estudios</div>
+    <ul class="estudios">
+      <li>Radiografía de tórax</li>
+      <li>Prueba de esfuerzo</li>
+    </ul>
+  </div>
+
+  <div class="paciente">
+    <div class="nombre-paciente">Doctores</div>
+    <ul class="estudios">
+      <li>Resonancia magnética</li>
+      <li>Perfil lipídico</li>
+      <li>Electroencefalograma</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
