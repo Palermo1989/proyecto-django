@@ -37,6 +37,7 @@ class Migration(migrations.Migration):
             name='estudio',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('nombre_estudio', models.CharField()),
                 ('fecha_estudio', models.DateField()),
                 ('tipo_estudio', models.CharField()),
                 ('resultado', models.TextField()),
