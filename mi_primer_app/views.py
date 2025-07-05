@@ -27,17 +27,17 @@ def nuevo_paciente(request,nombre):
     return render(request, 'mi_primer_app/nuevo_paciente.html', {'paciente': nuevo_paciente})   
 
 
-def nuevo_estudio(request,nombre_estudio):
-    if nombre_estudio is not None:
-       nuevo_estudio = estudio(
-        paciente=paciente.objects.get(nombre=nombre_estudio),
+def nuevo_estudio(request,tipo_estudio):
+    if tipo_estudio is not None:
+       nuevo_estudios = estudio(
+        paciente=paciente.objects.get(nombre=tipo_estudio),
         fecha_estudio="2023-10-01",
         tipo_estudio="Tipo de Estudio Ejemplo",
         resultado="Resultado del estudio"
     )
-    nuevo_estudio.save()
-    return render(request, 'mi_primer_app/nuevo_estudio.html', {'estudio': nuevo_estudio})
-
+    nuevo_estudios.save()
+    #return render(request, 'mi_primer_app/nuevo_estudio.html', {'estudio': nuevo_estudios})
+    return render(request = 'mi_primer_app/nuevo_estudio.html') 
 def nuevo_doctor(request,nombre):
     if nombre is not None:
         nuevo_doctor = doctor(
