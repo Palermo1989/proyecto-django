@@ -8,7 +8,6 @@ class paciente(models.Model):
     nombre= models.CharField()
     apellido = models.CharField()
     fecha_nacimiento = models.DateField()
-    edad = models.IntegerField()
     email = models.EmailField()
     obra_social = models.CharField()
 

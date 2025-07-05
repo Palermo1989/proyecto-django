@@ -19,13 +19,12 @@ def nuevo_paciente(request,nombre):
             nombre=nombre,
             apellido="Apellido",
             fecha_nacimiento="2000-01-01",
-            edad=23,
             email="apellido@gmail.com",
             obra_social="Obra Social Ejemplo"
     )
     
     nuevo_paciente.save()
-    return render(request, 'mi_primer_app/nuevopaciente.html', {'paciente': nuevo_paciente})   
+    return render(request, 'mi_primer_app/nuevo_paciente.html', {'paciente': nuevo_paciente})   
 
 def nuevo_estudio(request, nombre):
     if nombre is not None:
