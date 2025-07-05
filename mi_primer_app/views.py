@@ -6,6 +6,9 @@ from .models import doctor
 
 from django.http import HttpResponse
 
+def inicio(request):
+    return render(request, 'mi_primer_app/inicio.html')
+
 
 def saludo(request):
     return HttpResponse("¡Hola, mundo!") 
@@ -27,8 +30,17 @@ def nuevo_paciente(request,nombre):
     return render(request, 'mi_primer_app/nuevo_paciente.html', {'paciente': nuevo_paciente})   
 
 
-def nuevo_estudio(request):
-    return render(request , 'mi_primer_app/nuevo_estudio.html')
+def nuevo_estudio(request, tipo_estudio):
+    if tipo_estudio is not None:
+        nuevo_estudios = estudio(
+            nombre_paciente="Nombre Paciente",
+            fecha_estudio="2025-01-01",
+            tipo_estudio=tipo_estudio,
+            resultado="Resultado del estudio"
+        )
+        nuevo_estudios.save()
+        return render(request, 'nuevo_estudio/tipo_estudio/.html', {'estudio': nuevo_estudios})
+    
      
 def nuevo_doctor(request,nombre):
     if nombre is not None:

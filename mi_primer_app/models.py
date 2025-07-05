@@ -17,7 +17,7 @@ class paciente(models.Model):
 class estudio(models.Model):
     nombre_paciente = models.ForeignKey(paciente, on_delete=models.CASCADE)
     fecha_estudio = models.DateField()
-    tipo_estudio = models.CharField()
+    tipo_estudio = models.CharField()   
     resultado = models.TextField()
 
     def __str__(self):

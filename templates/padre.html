@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Clínica Merlina</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f2f2f2;
+    }
+    header {
+      background-color: #4a90e2;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    section {
+      background-color: white;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 800px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #4a90e2;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1> {%block title %} Clínica Merlina {% endblock %}</h1>
+    <p>Cuidamos tu salud con profesionalismo y dedicación</p>
+  </header>
+
+  <section>
+    <h2>¿Quiénes Somos?</h2>
+    <p>La Clínica Merlina es un centro médico comprometido con el bienestar integral de nuestros pacientes. Contamos con un equipo multidisciplinario y tecnología de punta para brindar atención de calidad.</p>
+  </section>
+
+  <section>
+    <h2>{% block cuerpo %}Nuestros Doctores</h2>
+    <ul>
+      <li><strong>Dra. Ana Torres</strong> – Medicina general y familiar</li>
+      <li><strong>Dr. Luis Mendoza</strong> – Especialista en cardiología</li>
+      <li><strong>Dra. Camila Ruiz</strong> – Pediatra</li>
+      <li><strong>Dr. Andrés López</strong> – Diagnóstico por imágenes</li>
+    </ul>{% endblock %}
+  </section>
+
+  <section>
+    <h2>{% block cuerpo2 %}Estudios Médicos</h2>
+    <p>Realizamos una amplia gama de estudios y diagnósticos, incluyendo:</p>
+    <ul>
+      <li>Análisis de laboratorio</li>
+      <li>Electrocardiogramas</li>
+      <li>Ecografías</li>
+      <li>Radiografías</li>
+      <li>Pruebas de esfuerzo</li>
+    </ul> {% endblock %}
+  </section>
+
+  <section>
+    <h2>{%block final %}Cuidado de los Pacientes</h2>
+    <p>En Clínica Merlina, priorizamos la atención personalizada, el respeto, y la empatía con cada paciente. Nuestro equipo trabaja para ofrecer un ambiente seguro, cómodo y humano durante todo el proceso médico.</p>
+  </section>{%endblock%}
+
+  <footer style="text-align:center; margin-top: 40px; color: #777;">
+    <p>&copy; 2025 Clínica Merlina - Todos los derechos reservados</p>
+  </footer>
+
+</body>
+</html>   

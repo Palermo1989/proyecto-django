@@ -1,90 +1,25 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Doctor y Pacientes</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f5f8fa;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #0077b6;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    .container {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 20px;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .paciente {
-      border-bottom: 1px solid #ddd;
-      padding: 15px 0;
-    }
-    .paciente:last-child {
-      border-bottom: none;
-    }
-    h2 {
-      color: #023e8a;
-    }
-    ul.estudios {
-      list-style-type: none;
-      padding-left: 20px;
-    }
-    ul.estudios li::before {
-      content: "🩺";
-      margin-right: 8px;
-    }
-    .nombre-paciente {
-      font-weight: bold;
-      font-size: 1.1em;
-    }
-  </style>
-</head>
-<body>
+{% extends "padre.html" %}
 
-<header>
-  <h1>Clinica Merlina</h1>
-  <p>Con los mejores especialistas para tu salud</p>
-</header>
+{% block title  %} Clínica Merlina,San Luis {% endblock %}
 
-<div class="container">
-  <h2>Seleccione sobre lo que desea conultar</h2>
+{% block cuerpo %}Nuestros Doctores</h2>
+    <ul>
+      <li><strong>Dra. Celeste  Bacchi</strong> – Medicina general y familiar</li>
+      <li><strong>Dr. David Palermo</strong> – Especialista en cardiología</li>
+      <li><strong>Dra. Olga Girardi</strong> – Pediatra</li>
+      <li><strong>Dr. Victoria Palermo Bacchi </strong> – Diagnóstico por imágenes</li>
+    </ul>{% endblock %}
 
-  <div class="paciente">
-    <div class="nombre-paciente">Pacientes</div>
-    <ul class="estudios">
-      <li>Ecografía abdominal</li>
-      <li>Hemograma completo</li>
-      <li>Electrocardiograma</li>
-    </ul>
-  </div>
-
-  <div class="paciente">
-    <div class="nombre-paciente">Estudios</div>
-    <ul class="estudios">
-      <li>Radiografía de tórax</li>
-      <li>Prueba de esfuerzo</li>
-    </ul>
-  </div>
-
-  <div class="paciente">
-    <div class="nombre-paciente">Doctores</div>
-    <ul class="estudios">
-      <li>Resonancia magnética</li>
-      <li>Perfil lipídico</li>
+    {% block cuerpo2 %}Estudios Médicos</h2>
+    <p>Realizamos una amplia gama de estudios y diagnósticos, incluyendo:</p>
+    <ul>
+      <li>Colonoscopía y endoscopía</li>
+      <li>Espirometría</li>
       <li>Electroencefalograma</li>
-    </ul>
-  </div>
-</div>
+      <li>Tomografías</li>
+      <li>Pruebas de esfuerzo</li>
+    </ul> {% endblock %}
 
-</body>
-</html>
+    {%block final %}Cuidado de los Pacientes</h2>
+    <p>El cuidado de pacientes abarca una amplia gama de acciones y responsabilidades destinadas a atender las necesidades de salud y bienestar de una persona, ya sea en un entorno hospitalario, en el hogar, o en otros contextos de atención. Implica no solo la atención médica directa, sino también el apoyo en las actividades de la vida diaria, la gestión de medicamentos, la educación del paciente y la promoción de su autonomía. .</p>
+  </section>{%endblock%}
