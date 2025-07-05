@@ -15,13 +15,13 @@ class paciente(models.Model):
         return f"{self.nombre} {self.apellido}"
 
 class estudio(models.Model):
-    paciente = models.ForeignKey(paciente, on_delete=models.CASCADE)
+    
     fecha_estudio = models.DateField()
     tipo_estudio = models.CharField()
     resultado = models.TextField()
 
     def __str__(self):
-        return f"Estudio de {self.paciente.nombre} - {self.tipo_estudio}"
+        return f"Estudio: {self.tipo_estudio} - Resultado: {self.resultado}"
     
 
 class doctor(models.Model):
