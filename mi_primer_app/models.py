@@ -15,7 +15,7 @@ class paciente(models.Model):
         return f"{self.nombre} {self.apellido}"
 
 class estudio(models.Model):
-    
+    nombre= models.ForeignKey(paciente, on_delete=models.CASCADE)
     fecha_estudio = models.DateField()
     tipo_estudio = models.CharField()
     resultado = models.TextField()

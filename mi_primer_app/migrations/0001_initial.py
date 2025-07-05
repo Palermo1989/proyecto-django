@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
             name='doctor',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('nombre', models.CharField()),
+                ('nombre_doctor', models.CharField()),
                 ('apellido', models.CharField()),
                 ('especialidad', models.CharField()),
                 ('email', models.EmailField(max_length=254)),
@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
             name='paciente',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('nombre', models.CharField()),
+                ('nombre_paciente', models.CharField()),
                 ('apellido', models.CharField()),
                 ('fecha_nacimiento', models.DateField()),
                 ('email', models.EmailField(max_length=254)),
